@@ -1,14 +1,12 @@
 const Arr = [ 2 , 2 , 3 , 2 , 5 , 8 , 12 , 5 , 8 ]
-function item(Arr){
-    let obj = { }
-    for (let i of Arr){
-        if (obj[i]) {
-            obj[i]++
-        }
-        else obj[i] = 1
+let repeat = Arr. reduce(function(prev, current) {
+
+    if (prev[current]===undefined){
+        prev[current]=1
     }
-    return obj
-}
-console.log(item(Arr))
+    else{ prev[current] = prev[current]+1
+    }
+    return prev
 
-
+},{})
+console.log(repeat)
